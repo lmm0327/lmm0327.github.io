@@ -199,7 +199,28 @@
 <p>2.默认值约束  DEFAULT ‘男’</p>
 <p>3.唯一约束    UNIQUE</p>
 <p>4.主键约束    PRIMARY KEY</p>
+<h4 id="查看表结构"><a href="#查看表结构" class="headerlink" title="查看表结构"></a>查看表结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DESC 表名</span><br></pre></td></tr></table></figure>
 
+<h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><h5 id="修改列名"><a href="#修改列名" class="headerlink" title="修改列名"></a>修改列名</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alter table 表名  change  列名  新列名 类型;</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改列类型"><a href="#修改列类型" class="headerlink" title="修改列类型"></a>修改列类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alter table 表名  change 列名  列名  新类型;</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改列类型-1"><a href="#修改列类型-1" class="headerlink" title="修改列类型"></a>修改列类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Alter table 表名  modify  列名  新类型;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据查询-单表"><a href="#数据查询-单表" class="headerlink" title="=============================数据查询-单表=============================="></a>=============================数据查询-单表==============================</h4><h5 id="查询表中全部信息"><a href="#查询表中全部信息" class="headerlink" title="查询表中全部信息"></a>查询表中全部信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id="查询表中指定列的信息"><a href="#查询表中指定列的信息" class="headerlink" title="查询表中指定列的信息"></a>查询表中指定列的信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 列1,列2 from 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id="语句的执行顺序：from—-gt-select"><a href="#语句的执行顺序：from—-gt-select" class="headerlink" title="语句的执行顺序：from—&gt;select"></a>语句的执行顺序：from—&gt;select</h5><h5 id="数据去重"><a href="#数据去重" class="headerlink" title="数据去重"></a>数据去重</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct 列…. From 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id="拼接结果"><a href="#拼接结果" class="headerlink" title="拼接结果"></a>拼接结果</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select concat(列1,列2) from 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id="运算符优先级："><a href="#运算符优先级：" class="headerlink" title="运算符优先级："></a>运算符优先级：</h5><p>1.乘法和除法的优先级高于加法和减法</p>
+<p> 2.同级运算的顺序是从左到右</p>
+<p> 3.表达式中使用”括号”可强行改变优先级的运算顺序</p>
+<h5 id="设置别名-注意：关键字as可以省略"><a href="#设置别名-注意：关键字as可以省略" class="headerlink" title="设置别名(注意：关键字as可以省略)"></a>设置别名(注意：关键字as可以省略)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select 列 as 别名 from 表名; </span><br><span class="line">select 列 别名 from 表名;</span><br></pre></td></tr></table></figure>
+
+<h5 id><a href="#" class="headerlink" title></a></h5>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
