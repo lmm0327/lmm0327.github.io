@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>MYSQL数据库增删改查语句 | Hexo</title>
+  <title>MYSQL数据库 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -178,7 +178,7 @@
       </time>
     
 </span>
-                <h1>MYSQL数据库增删改查语句</h1>
+                <h1>MYSQL数据库</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
@@ -220,7 +220,29 @@
 <p> 3.表达式中使用”括号”可强行改变优先级的运算顺序</p>
 <h5 id="设置别名-注意：关键字as可以省略"><a href="#设置别名-注意：关键字as可以省略" class="headerlink" title="设置别名(注意：关键字as可以省略)"></a>设置别名(注意：关键字as可以省略)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select 列 as 别名 from 表名; </span><br><span class="line">select 列 别名 from 表名;</span><br></pre></td></tr></table></figure>
 
-<h5 id><a href="#" class="headerlink" title></a></h5>
+<h5 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select 列... from where 条件；</span><br></pre></td></tr></table></figure>
+
+<h5 id="条件中比较运算符：-等于-大于-gt-大于等于-gt-小于-lt-小于等于-lt-不等于-或-lt-gt"><a href="#条件中比较运算符：-等于-大于-gt-大于等于-gt-小于-lt-小于等于-lt-不等于-或-lt-gt" class="headerlink" title="条件中比较运算符：( 等于:= 大于:&gt; 大于等于:&gt;= 小于:&lt; 小于等于:&lt;= 不等于:!= 或 &lt;&gt; )"></a>条件中比较运算符：( 等于:= 大于:&gt; 大于等于:&gt;= 小于:&lt; 小于等于:&lt;= 不等于:!= 或 &lt;&gt; )</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列  比较运算符  值;</span><br></pre></td></tr></table></figure>
+
+<p>注意:字符串、日期需使用单引号括起来 语句的执行顺序：from—&gt;where—&gt;select</p>
+<h5 id="逻辑运算符-并且-and-或-amp-amp-或-or-非-not-或"><a href="#逻辑运算符-并且-and-或-amp-amp-或-or-非-not-或" class="headerlink" title="逻辑运算符( 并且:and 或 &amp;&amp; 或:or 非:not 或 ! )"></a>逻辑运算符( 并且:and 或 &amp;&amp; 或:or 非:not 或 ! )</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">where 条件1  逻辑运算符  条件2; </span><br><span class="line">where not 条件;</span><br></pre></td></tr></table></figure>
+
+<h5 id="范围查询"><a href="#范围查询" class="headerlink" title="范围查询"></a>范围查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列 between 条件1  and 条件2;</span><br></pre></td></tr></table></figure>
+
+<p>//列在这个区间的值where 列 not between 条件1 and 条件2;    //不在这个区间where !( 列 between 条件1 and 条件2 );<br>//同样表示不在这个区间</p>
+<h5 id="集合查询-判断列的值是否在指定的集合中"><a href="#集合查询-判断列的值是否在指定的集合中" class="headerlink" title="集合查询( 判断列的值是否在指定的集合中 )"></a>集合查询( 判断列的值是否在指定的集合中 )</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列 in(值1,值2);</span><br></pre></td></tr></table></figure>
+
+<p>//列中的数据是in后的值里面的where 列 not in(值1,值2);   //不是in中指定值的数据</p>
+<h5 id="NULL值查询-注意：列中值为null不能使用-去查询"><a href="#NULL值查询-注意：列中值为null不能使用-去查询" class="headerlink" title="NULL值查询( 注意：列中值为null不能使用=去查询 )"></a>NULL值查询( 注意：列中值为null不能使用=去查询 )</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列 is null;</span><br></pre></td></tr></table></figure>
+
+<p>//查询列中值为null的数据</p>
+<h5 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h5><h6 id="：表示0到多个字符，示例："><a href="#：表示0到多个字符，示例：" class="headerlink" title="%：表示0到多个字符，示例："></a>%：表示0到多个字符，示例：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列 like &apos;%0&apos;;</span><br></pre></td></tr></table></figure>
+
+<p> //表示以0结尾where 列 like  ‘0%’;<br>//表示以0开头where 列 like  ‘%0%’;   //表示数据中包含0</p>
+<h6 id="：表示一个字符，可多次使用，示例："><a href="#：表示一个字符，可多次使用，示例：" class="headerlink" title="_：表示一个字符，可多次使用，示例："></a>_：表示一个字符，可多次使用，示例：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where 列 like &apos;%0_&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>   //数据结尾第二位是0</p>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
