@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>java 热加载 | Hexo</title>
+  <title>在 vue cli3 里配置反向代理 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,51 +173,24 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2019-11-03T11:44:31.000Z" itemprop="datePublished">
+      <time datetime="2019-11-03T12:10:17.000Z" itemprop="datePublished">
           2019-11-03
       </time>
     
 </span>
-                <h1>java 热加载</h1>
+                <h1>在 vue cli3 里配置反向代理</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h4 id="1-什么是热加载"><a href="#1-什么是热加载" class="headerlink" title="1.什么是热加载"></a>1.什么是热加载</h4><p>​        热加载是指可以在不重启服务的情况下让更改的代码生效，热加载可以显著的提升开发以及调试的效率，它是基于 Java 的类加载器实现的，但是由于热加载的不安全性，一般不会用于正式的生产环境。</p>
-<h4 id="2-热加载与热部署的区别"><a href="#2-热加载与热部署的区别" class="headerlink" title="2.热加载与热部署的区别"></a>2.热加载与热部署的区别</h4><p>​        首先，不管是热加载还是热部署，都可以在不重启服务的情况下编译/部署项目，都是基于 Java 的类加载器实现的。</p>
-<h5 id="那么两者到底有什么区别呢？"><a href="#那么两者到底有什么区别呢？" class="headerlink" title="那么两者到底有什么区别呢？"></a>那么两者到底有什么区别呢？</h5><h6 id="1-在部署方式上："><a href="#1-在部署方式上：" class="headerlink" title="1.在部署方式上："></a>1.在部署方式上：</h6><p>热部署是在服务器运行时重新部署项目。</p>
-<p>热加载是在运行时重新加载 class。</p>
-<h6 id="2-在实现原理上："><a href="#2-在实现原理上：" class="headerlink" title="2.在实现原理上："></a>2.在实现原理上：</h6><p>热部署是直接重新加载整个应用，耗时相对较高。</p>
-<p>热加载是在运行时重新加载 class，后台会启动一个线程不断检测你的类是否改变。</p>
-<h6 id="3-在使用场景上："><a href="#3-在使用场景上：" class="headerlink" title="3.在使用场景上："></a>3.在使用场景上：</h6><p>热部署更多的是在生产环境使用。</p>
-<p>热加载则更多的是在开发环境上使用。线上由于安全性问题不会使用，难以监控。</p>
-<h4 id="3-类加载五个阶段"><a href="#3-类加载五个阶段" class="headerlink" title="3.类加载五个阶段"></a>3.类加载五个阶段</h4><p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy80bGZvazJpY1VraWJUcUFpYTdyTHBuZUNPMUtrdVV4bWh4dWZJYTd3aWNPV3YxblB3cHVlWE1OZWlhT0ozbVJUcWljVnBMOWlibWp1aWJxS00zVTFnQ3g5UDB0VEVnLzY0MA?x-oss-process=image/format,png" alt></p>
-<p>​        可能你已经发现了，图中一共是7个阶段，而不是5个。是因为图是类的完整生命周期，如果要说只是类加载阶段的话，图里最后的使用（Using）和卸载（Unloading）并不算在内。</p>
-<h4 id="4-简单描述一下类加载的五个阶段："><a href="#4-简单描述一下类加载的五个阶段：" class="headerlink" title="4.简单描述一下类加载的五个阶段："></a>4.简单描述一下类加载的五个阶段：</h4><p>1.加载阶段：找到类的静态存储结构，加载到虚拟机，定义数据结构。用户可以自定义类加载器。</p>
-<p>2.验证阶段：确保字节码是安全的，确保不会对虚拟机的安全造成危害。</p>
-<p>3.准备阶段：确定内存布局，确定内存遍历，赋初始值（注意：是初始值，也有特殊情况）。</p>
-<p>4.解析阶段：将符号变成直接引用。</p>
-<p>5.初始化阶段：调用程序自定义的代码。规定有且仅有5种情况必须进行初始化。</p>
-<p>​        1.new（实例化对象）、getstatic（获取类变量的值，被final修饰的除外，他的值在编译器时放到了常量池）、putstatic（给类变量赋值）、invokestatic（调用静态方法） 时会初始化</p>
-<p>​        2.调用子类的时候，发现父类还没有初始化，则父类需要立即初始化。</p>
-<p>​        3.虚拟机启动，用户要执行的主类，主类需要立即初始化，如 main 方法。</p>
-<p>​        4.使用 java.lang.reflect包的方法对类进行反射调用方法 是会初始化。</p>
-<p>​        5.当使用JDK 1.7的动态语言支持时， 如果java.lang.invoke.MethodHandle实例最后的解析结果REF_getStatic、 REF_putStatic、 REF_invokeStatic的方法句柄， 并且这个方法句柄所对应的类没有进行过初始化， 则需要先触发其初始化。</p>
-<p>要说明的是，类加载的 5 个阶段中，只有加载阶段是用户可以自定义处理的，而验证阶段、准备阶段、解析阶段、初始化阶段都是用 JVM 来处理的。</p>
-<p>————————————————</p>
-<p>原文链接：<a href="https://blog.csdn.net/Summer_Lyf/article/details/102832667" target="_blank" rel="noopener">https://blog.csdn.net/Summer_Lyf/article/details/102832667</a></p>
-
+      		
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/11/03/在-vue-cli3-里配置反向代理/" style="float: left;">
-        ← 在 vue cli3 里配置反向代理
-    </a>
     
-    
-    <a class="pull-right" href="/2019/10/27/在eclipse中修改jsp的编码为UTF-8/">
-        在eclipse中修改jsp的编码为UTF-8 →
+    <a class="pull-right" href="/2019/11/03/java-热加载/">
+        java 热加载 →
     </a>
     
 </nav>
