@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>在eclipse中修改jsp的编码为UTF-8 | Hexo</title>
+  <title>Archives: 2019/11 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -167,101 +167,69 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2019-10-27T12:12:09.000Z" itemprop="datePublished">
-          2019-10-27
-      </time>
-    
-</span>
-                <h1>在eclipse中修改jsp的编码为UTF-8</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h4 id="一、修改原因"><a href="#一、修改原因" class="headerlink" title="一、修改原因"></a>一、修改原因</h4><p>在使用eclipse学习jsp时，很多默认的编码都是iso-8859-1，而我们需要使用的是utf-8编码，我们第一个接触改变jsp编码的方式可能都是在需要修改的jsp中修改，如下：</p>
-<p>将charset与pageEncoding的编码手动改写为UTF-8。</p>
-<p><img src="https://img-blog.csdnimg.cn/20190420105347219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hhblFpdXl1ZTEyMw==,size_16,color_FFFFFF,t_70" alt></p>
-<h4 id="二、修改步骤"><a href="#二、修改步骤" class="headerlink" title="二、修改步骤"></a>二、修改步骤</h4><p>下面就是将eclipse中jsp的文件改为默认UTF-8编码的步骤：</p>
-<p> 第一步、打开eclipse，在菜单栏里找到window –&gt; Preference</p>
-<p>第二步、打开web –&gt; JSP Files</p>
-<p>第三步、点击JSP Files–&gt; 修改Encoding选项为UTF-8</p>
-<p>打开的界面如下：<br><img src="https://img-blog.csdnimg.cn/20190420110606374.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hhblFpdXl1ZTEyMw==,size_16,color_FFFFFF,t_70" alt></p>
-<p>原文链接：<a href="https://blog.csdn.net/hanqiuyue123/article/details/89414261" target="_blank" rel="noopener">https://blog.csdn.net/hanqiuyue123/article/details/89414261</a></p>
-
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2019/11/03/java-热加载/" style="float: left;">
-        ← java 热加载
-    </a>
-    
-    
-    <a class="pull-right" href="/2019/10/27/Eclipse配置Tomcat/">
-        Eclipse配置Tomcat →
-    </a>
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2019/11/03/java-热加载/">java 热加载</a></h4>
+                            
+                            <p><time datetime="2019-11-03T11:44:31.000Z"><a href="/2019/11/03/java-热加载/">2019-11-03</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>虽然还没想好写点什么，但是总觉得这里放句话比较和谐。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
